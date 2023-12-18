@@ -1,0 +1,103 @@
+       /* public/styles/exercisePlanner.css */
+       body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to right, #3498db, #9b59b6); /* Gradient background */
+        color: #fff; /* White text color */
+    }
+    
+    a {
+        color: hotpink;
+      }
+    header {
+        background: #2c3e50; /* Dark blue header background color */
+        color: #ecf0f1;
+        text-align: center;
+        padding: 20px 0;
+    }
+    
+   header h1 {
+        margin: 0;
+        font-size: 2.5em;
+    }
+    
+   header p {
+        font-size: 1.2em;
+    }
+    
+    .exercise-form {
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .exercise-form form {
+        display: flex;
+        flex-direction: column;
+        max-width: 300px;
+        margin: 0 auto;
+    }
+    
+    label {
+        margin-bottom: 5px;
+        color: #ecf0f1;
+    }
+    
+    input {
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ecf0f1; /* White border */
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.2); /* White background with transparency */
+        color: #ecf0f1; /* White text color */
+    }
+    
+    button {
+        padding: 10px;
+        background: #e74c3c; /* Red button color */
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+    
+    .exercise-form button:hover {
+        background: #c0392b; /* Darker red on hover */
+    }
+    
+    .success-message {
+        color: #2ecc71; /* Green success message color */
+        font-weight: bold;
+    }
+    
+    .exercise-suggestions {
+        text-align: center;
+        padding: 20px;
+    }
+    
+    .exercise-suggestions ul {
+        list-style-type: none;
+        padding: 0;
+    }
+    
+    .exercise-suggestions li {
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+    
+    .back-to-dashboard {
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    footer {
+        background: #34495e; /* Dark blue footer background color */
+        color: #ecf0f1;
+        text-align: center;
+        padding: 10px 0;
+        position:fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+    }

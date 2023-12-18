@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Meal Log</title>
+    <style>
+         body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background: linear-gradient(to right, #3498db, #9b59b6); /* Gradient background */
+        color: #fff; /* White text color */
+        text-align: center;
+    }
+    header {
+        background: #2c3e50; /* Dark blue header background color */
+        color: #ecf0f1;
+        text-align: center;
+        padding: 20px 0;
+    }
+    
+   header h1 {
+        margin: 0;
+        font-size: 2.5em;
+    }
+    
+   header p {
+        font-size: 1.2em;
+    }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            border: 1px solid #ddd;
+            margin: 5px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .back-to-dashboard {
+        text-align: center;
+        margin-top: 20px;
+        }
+        a {
+        color: hotpink;
+      }
+    
+    </style>
+</head>
+<body>
+    <header>
+    <h1>Meal Log
+    </h1>
+    <section class="back-to-dashboard">
+        <a href="/excercise-planner" class="cta-button">Go back to Excercise Planner</a>
+    </section>
+</header>
+    <ul>
+        <% mealLogData.forEach(logEntry => { %>
+            <li><%= logEntry.mealType %> - Calories: <%= logEntry.calories %> - Logged at <%= logEntry.createdAt %></li>
+        <% }); %>
+    </ul>
+</body>
+</html>

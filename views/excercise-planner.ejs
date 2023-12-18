@@ -1,0 +1,104 @@
+
+<html>
+<head>
+    <title>Exercise Planner</title>
+    <link rel="stylesheet" href="/css/excercisePlanner.css">
+</head>
+<body>
+    <header>
+        <h1>🚴‍♂️ Plan Your Exercise and Log your Meals</h1>
+        <p>Your journey to a healthier you starts here!</p>
+        <section class="back-to-dashboard">
+            <a href="/" class="cta-button">Go back to Dashboard</a>
+        </section>
+    </header>
+
+    <section class="exercise-form">
+        <form action="/log-excercise" method="post">
+            <label for="exerciseName">Exercise Name:</label>
+            <input type="text" name="exerciseName" id="exerciseName" required>
+            <label for="duration">Duration (minutes):</label>
+            <input type="text" name="duration" id="duration" required>
+            <button type="submit" class="cta-button">Log Exercise</button>
+        </form>
+
+        <% if (typeof success !== 'undefined' && success) { %>
+            <p class="success-message">Exercise logged successfully! 🎉</p>
+        <% } %>
+    </section>
+
+    <section class="exercise-suggestions">
+        <h2>Exercise logs</h2>
+        <ul>
+            <% exerciseData.forEach(exercise => { %>
+                <li><%= exercise.exerciseName %> - Duration: <%= exercise.duration %> </li>
+            <% }); %>
+        </ul>
+    
+    </section>
+    <section class="exercise-suggestions">
+        <h2>Exercise Suggestions</h2>
+        <ul>
+            <li>Walking - 30 minutes</li>
+            <li>Running - 20 minutes</li>
+            <li>Yoga - 45 minutes</li>
+            <!-- Add more exercise suggestions as needed -->
+        </ul>
+    </section>
+
+  
+
+
+    
+
+
+    <section class="exercise-suggestions">
+    <h2>Log Water Intake</h2>
+    <form action="/log-water-intake" method="post">
+    <label for="waterIntake " required>Water Intake (glasses):</label>
+    <input type="text" name="waterIntake" id="waterIntake" required>
+    <button type="submit">Log Water Intake</button>
+</form>
+
+
+<h2>Water Intake Log</h2>
+<a href="/water-intake-log">View Water Intake Log</a>
+</section>
+
+
+<section class="exercise-suggestions">
+<h2>Log Meal</h2>
+<form action="/log-meal" method="post">
+    <label for="mealType">Meal Type:</label>
+    <input type="text" name="mealType" id="mealType" required>
+    <label for="calories">Calories:</label>
+    <input type="text" name="calories" id="calories" required>
+    <button type="submit">Log Meal</button>
+</form>
+<section class="exercise-suggestions">
+<h2>Meal Log</h2>
+<a href="/meal-log">View Meal Log</a>
+</section>
+
+
+
+<section class="exercise-suggestions">
+<h2>Set Health Goals</h2>
+<form action="/set-goals" method="post">
+    <label for="goalType">Goal Type:</label>
+    <input type="text" name="goalType" id="goalType" required>
+    <label for="goalValue">Goal Value:</label>
+    <input type="text" name="goalValue" id="goalValue" required>
+    <button type="submit">Set Goal</button>
+</form>
+
+<h2>Goal Tracker</h2>
+<a href="/goal-tracker">View Goal Tracker</a>
+   
+</section>
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!-- views/dashboard.ejs -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/dashboard.css"> <!-- Link to your custom styles -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Health Dashboard</title>
+</head>
+<body>
+    <header>
+        <h1>🌈 Your Health Dashboard</h1>
+        <p>Stay Fit, Stay Healthy!</p>
+    </header>
+    
+    <section class="dashboard-content">
+        <div class="data-visualizations">
+            <h2>Your Progress</h2>
+            <canvas id="healthChart" width="400" height="300"></canvas>
+        </div>
+
+
+        <div class="health-logs">
+            <!-- Display recent health logs -->
+            <h2> 🏋️‍♀️Recent Health Logs</h2>
+            <ul>
+                <h3>Excercises :</h3> 
+                 <% exerciseData.forEach(exercise => { %>
+                    <li><%= exercise.exerciseName %> - Duration: <%= exercise.duration %> </li>
+                <% }); %>
+                 
+            </ul>
+            <ul>
+                <h3>Meals :</h3>
+                <% mealLogData.forEach(meal => { %>
+                    <li><%= meal.mealType %> - Calories: <%= meal.calories %> kcal </li>
+                <% }); %>
+              
+            </ul>
+
+            <ul>
+                <h3>Water Logs :</h3>
+                <% waterLogData.forEach(log => { %>
+                    <li>Water Intake :<%= log.waterIntake %> Glass </li>
+                <% }); %>
+              
+            </ul>
+        </div>
+    </section>
+
+    <section class="user-actions">
+        <a href="/excercise-planner" class="cta-button">Plan Your Exercise</a>
+        <a href="/health-reminder" class="cta-button">Set Health Reminders</a>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Your Health App</p>
+    </footer>
+
+   
+    <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+    <script src="/scripts/dashboard.js"></script>
+</body>
+</html>

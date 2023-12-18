@@ -1,0 +1,33 @@
+<html>
+<head>
+    <title>Health Reminders</title>
+    <link rel="stylesheet" href="/css/healthReminder.css">
+</head>
+<body>
+    <header>
+    <h1>Health Reminders</h1>
+    <section class="back-to-dashboard">
+        <a href="/" class="cta-button">Go back to Dashboard</a>
+    </section>
+</header>
+    <ul>
+        <% healthReminders.forEach(reminder => { %>
+            <li>Reminder: <%= reminder.reminderText %> - Time: <%= reminder.reminderTime %></li>
+        <% }); %>
+    </ul>
+
+
+            
+    <h2>Set Health Reminders</h2>
+    <form action="/set-reminder" method="post">
+        <label for="reminderText">Reminder Text:</label>
+        <input type="text" name="reminderText" id="reminderText" required>
+        <label for="reminderTime">Reminder Time:</label>
+        <input type="text" name="reminderTime" id="reminderTime" placeholder="HH:mm" required>
+        <button type="submit">Set Reminder</button>
+    </form>
+
+  
+        
+</body>
+</html>
